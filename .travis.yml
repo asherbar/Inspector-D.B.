@@ -7,4 +7,4 @@ python:
 install:
 - pip install -r requirements.txt
 script:
-- ./InspectorDb/project/test/run_tests.py
+- ./project/test/run_tests.py
