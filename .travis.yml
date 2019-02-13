@@ -7,5 +7,8 @@ python:
 - "3.7"
 install:
 - pip install -r requirements.txt
+- pip install codecov
 script:
-- ./project/test/run_tests.py
+- coverage run project/test/run_tests.py
+after_success:
+- codecov
