@@ -28,7 +28,7 @@ class Table:
     def get_columns(self):
         with get_connection(self._db_name) as c:
             cursor = c.cursor()
-            cursor.execute('SELECT * FROM {} LIMIT 1'.format(self._table_name))
+            cursor.execute('SELECT * FROM %s LIMIT 1', self._table_name)
             return [desc[0] for desc in cursor.description]
 
     def _table_exists(self):
