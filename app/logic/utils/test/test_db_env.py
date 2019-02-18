@@ -82,18 +82,18 @@ class TestInspectorDbEnv(unittest.TestCase):
     def test_get_db_credentials_from_db_credentials(self):
         db_name = 'DB'
         username = 'UN'
-        password = 'P'
+        pswd = 'P'
         hostname = 'HN'
         port = 1234
 
         with mock.patch.dict('os.environ',
                              {'DB_CREDENTIALS': f'[{{"dbname":"{db_name}","hostname":"{hostname}",'
-                                                f'"password":"{password}","port":{port},"username":"{username}"}}]'}):
+                                                f'"password":"{pswd}","port":{port},"username":"{username}"}}]'}):
             object_under_test = DbEnv()
             db_credentials = object_under_test.get_db_credentials(db_name)
             self.assertEqual(db_credentials.dbname, db_name)
             self.assertEqual(db_credentials.username, username)
-            self.assertEqual(db_credentials.password, password)
+            self.assertEqual(db_credentials.password, pswd)
             self.assertEqual(db_credentials.hostname, hostname)
             self.assertEqual(db_credentials.port, port)
 
