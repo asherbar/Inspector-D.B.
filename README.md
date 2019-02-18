@@ -19,21 +19,22 @@ Set the following environment variables to use the possible options:
 -   **SESSION_COOKIE_AGE**- the number of inactivity minutes before the user is automatically logged out. Default is 1209600 (two weeks).
 -   **VCAP_SERVICE_LABEL**- the label of the postgres service. Default is _postgresql_.
 -   **DB_CREDENTIALS**- if given, then assumed to be a string that's a valid JSON list, where each object in the list contains a full set of database credentials, which are:
-    - username
-    - password
-    - hostname
-    - port
-    - dbname  
-    For example: 
-        ```json
-        [
-          {
-            "username": "myuser", 
-            "password": "mypass",
-            "hostname": "myhostname",
-            "port": 1234,
-            "dbname": "mydbname"
-          }
-        ]
-        ```
+    -   username
+    -   password
+    -   hostname
+    -   port
+    -   dbname  
+    
+    For example:  
+    ```json
+    [
+      {
+        "username": "myuser", 
+        "password": "mypass",
+        "hostname": "myhostname",
+        "port": 1234,
+        "dbname": "mydbname"
+      }
+    ]
+    ```
     When this option is given, other credentials that might be given via VCAP_SERVICES (if used in CF), are ignored
